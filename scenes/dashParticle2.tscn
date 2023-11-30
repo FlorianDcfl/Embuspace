@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/dash.png" type="Texture" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+flag_disable_z = true
+gravity = Vector3( 0, 98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+color = Color( 0, 1, 0.94902, 1 )
+
+[node name="Node2D" type="Particles2D"]
+emitting = false
+amount = 10
+lifetime = 1.7
+one_shot = true
+speed_scale = 10.0
+process_material = SubResource( 1 )
+texture = ExtResource( 1 )

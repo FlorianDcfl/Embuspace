@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scripts/enemy2.gd" type="Script" id=1]
+[ext_resource path="res://assets/vector_space.png" type="Texture" id=2]
+[ext_resource path="res://assets/NOOB+.png" type="Texture" id=3]
+[ext_resource path="res://scenes/reacteur_ennemi.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/explosion.tscn" type="PackedScene" id=5]
+[ext_resource path="res://sounds/Sfx_Ennemi_Death.wav" type="AudioStream" id=6]
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 27.2379
+height = 35.3466
+
+[node name="Area2D" type="Area2D" groups=[
+"Ennemis",
+"Ennemi2",
+]]
+script = ExtResource( 1 )
+
+[node name="vector_space" type="Sprite" parent="."]
+visible = false
+position = Vector2( -60.3444, 9.05495 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+rotation = -1.5708
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+shape = SubResource( 1 )
+
+[node name="reacteur" type="Node2D" parent="."]
+
+[node name="reacteur_ennemi" parent="reacteur" instance=ExtResource( 4 )]
+position = Vector2( -41.465, -12.5 )
+rotation = -1.5708
+scale = Vector2( 0.7, 1 )
+
+[node name="reacteur_ennemi2" parent="reacteur" instance=ExtResource( 4 )]
+position = Vector2( -41.465, 12.5 )
+rotation = -1.5708
+scale = Vector2( 0.7, 1 )
+
+[node name="explosion" parent="." instance=ExtResource( 5 )]
+
+[node name="timer_explosion" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="sound_death_ennemy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -25.0
+
+[node name="canon1" type="Position2D" parent="."]
+position = Vector2( 25, -12.5 )
+
+[node name="canon2" type="Position2D" parent="."]
+position = Vector2( 25, 12.5 )
+[connection signal="timeout" from="timer_explosion" to="." method="_on_timer_explosion_timeout"]

@@ -1,0 +1,79 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://scripts/menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/vector_space.png" type="Texture" id=2]
+[ext_resource path="res://assets/ui/logo.png" type="Texture" id=3]
+[ext_resource path="res://assets/ui/bt_start.png" type="Texture" id=4]
+[ext_resource path="res://assets/ui/bt_start_hover.png" type="Texture" id=5]
+[ext_resource path="res://assets/ui/bt_commands.png" type="Texture" id=6]
+[ext_resource path="res://assets/ui/bt_commands_hover.png" type="Texture" id=7]
+[ext_resource path="res://assets/ui/bt_scoreboard.png" type="Texture" id=8]
+[ext_resource path="res://assets/ui/bt_scoreboard_hover.png" type="Texture" id=9]
+[ext_resource path="res://assets/ui/bt_quit.png" type="Texture" id=10]
+[ext_resource path="res://assets/ui/bt_quit_hover.png" type="Texture" id=11]
+[ext_resource path="res://assets/ui/commands.png" type="Texture" id=12]
+
+[node name="Node" type="Node"]
+script = ExtResource( 1 )
+
+[node name="vector_space" type="Sprite" parent="."]
+position = Vector2( 960, 534 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="logo" type="Sprite" parent="."]
+position = Vector2( 982.469, 199.948 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="bt_start" type="TextureButton" parent="Control"]
+margin_left = 780.0
+margin_top = 451.949
+margin_right = 1170.0
+margin_bottom = 531.949
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+
+[node name="bt_commands" type="TextureButton" parent="Control"]
+margin_left = 779.0
+margin_top = 614.0
+margin_right = 1169.0
+margin_bottom = 694.0
+texture_normal = ExtResource( 6 )
+texture_hover = ExtResource( 7 )
+expand = true
+
+[node name="bt_scoreboard" type="TextureButton" parent="Control"]
+margin_left = 780.0
+margin_top = 774.0
+margin_right = 1170.0
+margin_bottom = 854.0
+texture_normal = ExtResource( 8 )
+texture_hover = ExtResource( 9 )
+expand = true
+
+[node name="bt_quit" type="TextureButton" parent="Control"]
+margin_left = 780.0
+margin_top = 935.0
+margin_right = 1170.0
+margin_bottom = 1015.0
+texture_normal = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+expand = true
+
+[node name="commands" type="Sprite" parent="Control"]
+visible = false
+position = Vector2( 960, 534 )
+texture = ExtResource( 12 )
+[connection signal="pressed" from="Control/bt_start" to="." method="_on_bt_start_pressed"]
+[connection signal="mouse_entered" from="Control/bt_commands" to="." method="_on_bt_commands_mouse_entered"]
+[connection signal="mouse_exited" from="Control/bt_commands" to="." method="_on_bt_commands_mouse_exited"]
+[connection signal="pressed" from="Control/bt_scoreboard" to="." method="_on_bt_scoreboard_pressed"]
+[connection signal="pressed" from="Control/bt_quit" to="." method="_on_bt_quit_pressed"]

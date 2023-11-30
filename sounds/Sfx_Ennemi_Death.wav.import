@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sfx_Ennemi_Death.wav-1abf2734c4c0d6c0244437655a5cdb03.sample"
+
+[deps]
+
+source_file="res://sounds/Sfx_Ennemi_Death.wav"
+dest_files=[ "res://.import/Sfx_Ennemi_Death.wav-1abf2734c4c0d6c0244437655a5cdb03.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

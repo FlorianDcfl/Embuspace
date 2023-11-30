@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/reacteur_noob.png" type="Texture" id=1]
+
+[sub_resource type="ParticlesMaterial" id=1]
+emission_shape = 1
+emission_sphere_radius = 0.1
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 5.0
+orbit_velocity = 1.0
+orbit_velocity_random = 0.3
+
+[node name="reacteur_ennemi" type="Particles2D"]
+scale = Vector2( 1, 0.995697 )
+amount = 100
+speed_scale = 5.0
+explosiveness = 1.0
+process_material = SubResource( 1 )
+texture = ExtResource( 1 )

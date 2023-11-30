@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Sfx_Vaisseau_Explose.wav-1e6ddf41f0444ecfdab9897304ad3bff.sample"
+
+[deps]
+
+source_file="res://sounds/Sfx_Vaisseau_Explose.wav"
+dest_files=[ "res://.import/Sfx_Vaisseau_Explose.wav-1e6ddf41f0444ecfdab9897304ad3bff.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
